@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="fundo">
+    <header>
+        <nav>
+            <ul type="none">
+                <li><a href="#intro"></a>Intro</li>
+                <li><a href="#calculadora"></a>Calculadora</li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+
+        <h1>Os Perigos Da Obesidade</h1>
+        <p>A obesidade é um problema de saúde crescente e está relacionada a diversas doenças, como diabetes e problemas cardíacos. Saber seu IMC (Índice de Massa Corporal) é um passo importante para entender se seu peso está adequado para sua altura.
+
+            Calcule o seu IMC agora e descubra em que faixa você se encontra: baixo peso, peso normal, sobrepeso ou obesidade. Cuidar da sua saúde começa com simples atitudes, e medir seu IMC é o primeiro passo</p>
+        <div class="calcimc">
+            <h2>Indice de Massa Corporal</h1>
+
+            <form action="#">
+                <label for="altura">Altura:</label>
+                <input type="number" name="altura" id="altura">
+
+                <label for="peso">Peso (kg)</label>
+                <input type="number" name="peso" id="peso">
+
+                
+            </form>
+            <div class=" button-result">
+                <button onclick="calcImc()">Calcular IMC</button>
+
+                <p>Seu indice de massa corporal é: <span id="resultado"></span></p>
+            </div>
+            
+
+        </div>
+        <button class="mudarcor" onclick="mudarCor()">Mudar cor</button>
+    
+    </div>
+    <footer>
+        <p>&copy;2024 Todos os direitos reservados | Mateus Gonçalves</p>
+    </footer>
+    <script>
+
+        function calcImc(){
+            const altura = parseFloat(document.getElementById("altura").value)
+            const peso = parseFloat(document.getElementById("peso").value)
+
+            const resultado = peso / (altura**2)
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2)
+        }
+
+        function mudarCor(){
+            const fundo = document.getElementById("fundo");
+            fundo.style.backgroundColor = fundo.style.backgroundColor === "red" ? "blue" : "red";
+
+            
+        }
+
+    </script>
+    
+</body>
+</html>
